@@ -12,6 +12,30 @@
 		E23738971BF15F370002D1FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23738951BF15F370002D1FC /* Main.storyboard */; };
 		E23738991BF15F370002D1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E23738981BF15F370002D1FC /* Assets.xcassets */; };
 		E237389C1BF15F370002D1FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E237389A1BF15F370002D1FC /* LaunchScreen.storyboard */; };
+		E2B762511BF2A63D002D2D66 /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B762501BF2A63D002D2D66 /* ContactsVC.swift */; };
+		E2B762531BF2A651002D2D66 /* ComposeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B762521BF2A651002D2D66 /* ComposeVC.swift */; };
+		E2B7625A1BF2C2C7002D2D66 /* ComposeTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B762581BF2C2C7002D2D66 /* ComposeTVCell.swift */; };
+		E2B7625B1BF2C2C7002D2D66 /* ComposeTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2B762591BF2C2C7002D2D66 /* ComposeTVCell.xib */; };
+		E2C9F4741BF3B70000A4BD79 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F4731BF3B70000A4BD79 /* KDCircularProgress.swift */; };
+		E2C9F47C1BF3BF4000A4BD79 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F4751BF3BF4000A4BD79 /* UIViewExtension.swift */; };
+		E2C9F47D1BF3BF4000A4BD79 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F4761BF3BF4000A4BD79 /* UIImageExtension.swift */; };
+		E2C9F47E1BF3BF4000A4BD79 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F4771BF3BF4000A4BD79 /* UIColorExtension.swift */; };
+		E2C9F47F1BF3BF4000A4BD79 /* UIAlertViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F4781BF3BF4000A4BD79 /* UIAlertViewExtension.swift */; };
+		E2C9F4801BF3BF4000A4BD79 /* NSJSONSerializationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F4791BF3BF4000A4BD79 /* NSJSONSerializationExtension.swift */; };
+		E2C9F4811BF3BF4000A4BD79 /* NSDictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F47A1BF3BF4000A4BD79 /* NSDictionaryExtension.swift */; };
+		E2C9F4821BF3BF4000A4BD79 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F47B1BF3BF4000A4BD79 /* NSDateExtension.swift */; };
+		E2C9F4881BF3E66A00A4BD79 /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F4871BF3E66A00A4BD79 /* CalculatorVC.swift */; };
+		E2C9F48A1BF3F98100A4BD79 /* ReportingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F4891BF3F98100A4BD79 /* ReportingVC.swift */; };
+		E2C9F48C1BF5345E00A4BD79 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F48B1BF5345E00A4BD79 /* SettingsVC.swift */; };
+		E2C9F48E1BF53BEE00A4BD79 /* LaunchingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F48D1BF53BEE00A4BD79 /* LaunchingVC.swift */; };
+		E2C9F4911BF57A3100A4BD79 /* WeekdayMeetingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F48F1BF57A3100A4BD79 /* WeekdayMeetingTVCell.swift */; };
+		E2C9F4921BF57A3100A4BD79 /* WeekdayMeetingTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2C9F4901BF57A3100A4BD79 /* WeekdayMeetingTVCell.xib */; };
+		E2C9F4941BF5A2CD00A4BD79 /* HomeCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F4931BF5A2CD00A4BD79 /* HomeCustomView.swift */; };
+		E2C9F4961BF5A69700A4BD79 /* HomeCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2C9F4951BF5A69700A4BD79 /* HomeCustomView.xib */; };
+		E2C9F4981BF5BDDC00A4BD79 /* ReportsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F4971BF5BDDC00A4BD79 /* ReportsHeaderView.swift */; };
+		E2C9F49A1BF5BDF300A4BD79 /* ReportsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2C9F4991BF5BDF300A4BD79 /* ReportsHeaderView.xib */; };
+		E2C9F49D1BF64EB800A4BD79 /* ReportingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F49B1BF64EB800A4BD79 /* ReportingTVCell.swift */; };
+		E2C9F49E1BF64EB800A4BD79 /* ReportingTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2C9F49C1BF64EB800A4BD79 /* ReportingTVCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +46,31 @@
 		E23738981BF15F370002D1FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E237389B1BF15F370002D1FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E237389D1BF15F370002D1FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E23738A51BF163490002D1FC /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		E2B762501BF2A63D002D2D66 /* ContactsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
+		E2B762521BF2A651002D2D66 /* ComposeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeVC.swift; sourceTree = "<group>"; };
+		E2B762581BF2C2C7002D2D66 /* ComposeTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTVCell.swift; sourceTree = "<group>"; };
+		E2B762591BF2C2C7002D2D66 /* ComposeTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeTVCell.xib; sourceTree = "<group>"; };
+		E2C9F4731BF3B70000A4BD79 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
+		E2C9F4751BF3BF4000A4BD79 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		E2C9F4761BF3BF4000A4BD79 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		E2C9F4771BF3BF4000A4BD79 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		E2C9F4781BF3BF4000A4BD79 /* UIAlertViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertViewExtension.swift; sourceTree = "<group>"; };
+		E2C9F4791BF3BF4000A4BD79 /* NSJSONSerializationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSJSONSerializationExtension.swift; sourceTree = "<group>"; };
+		E2C9F47A1BF3BF4000A4BD79 /* NSDictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDictionaryExtension.swift; sourceTree = "<group>"; };
+		E2C9F47B1BF3BF4000A4BD79 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
+		E2C9F4871BF3E66A00A4BD79 /* CalculatorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorVC.swift; sourceTree = "<group>"; };
+		E2C9F4891BF3F98100A4BD79 /* ReportingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportingVC.swift; sourceTree = "<group>"; };
+		E2C9F48B1BF5345E00A4BD79 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		E2C9F48D1BF53BEE00A4BD79 /* LaunchingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchingVC.swift; sourceTree = "<group>"; };
+		E2C9F48F1BF57A3100A4BD79 /* WeekdayMeetingTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekdayMeetingTVCell.swift; sourceTree = "<group>"; };
+		E2C9F4901BF57A3100A4BD79 /* WeekdayMeetingTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekdayMeetingTVCell.xib; sourceTree = "<group>"; };
+		E2C9F4931BF5A2CD00A4BD79 /* HomeCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCustomView.swift; sourceTree = "<group>"; };
+		E2C9F4951BF5A69700A4BD79 /* HomeCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCustomView.xib; sourceTree = "<group>"; };
+		E2C9F4971BF5BDDC00A4BD79 /* ReportsHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsHeaderView.swift; sourceTree = "<group>"; };
+		E2C9F4991BF5BDF300A4BD79 /* ReportsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportsHeaderView.xib; sourceTree = "<group>"; };
+		E2C9F49B1BF64EB800A4BD79 /* ReportingTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportingTVCell.swift; sourceTree = "<group>"; };
+		E2C9F49C1BF64EB800A4BD79 /* ReportingTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportingTVCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +103,55 @@
 		E23738901BF15F370002D1FC /* MeetMarket */ = {
 			isa = PBXGroup;
 			children = (
+				E2C9F4861BF3E64300A4BD79 /* CircularLoading */,
+				E2C9F4831BF3BF4C00A4BD79 /* Extensions */,
 				E23738911BF15F370002D1FC /* AppDelegate.swift */,
+				E2B762501BF2A63D002D2D66 /* ContactsVC.swift */,
+				E2B762521BF2A651002D2D66 /* ComposeVC.swift */,
+				E2C9F4871BF3E66A00A4BD79 /* CalculatorVC.swift */,
 				E23738931BF15F370002D1FC /* ViewController.swift */,
+				E2C9F4891BF3F98100A4BD79 /* ReportingVC.swift */,
+				E2C9F48B1BF5345E00A4BD79 /* SettingsVC.swift */,
 				E23738951BF15F370002D1FC /* Main.storyboard */,
 				E23738981BF15F370002D1FC /* Assets.xcassets */,
 				E237389A1BF15F370002D1FC /* LaunchScreen.storyboard */,
 				E237389D1BF15F370002D1FC /* Info.plist */,
+				E23738A51BF163490002D1FC /* Header.h */,
+				E2B762581BF2C2C7002D2D66 /* ComposeTVCell.swift */,
+				E2B762591BF2C2C7002D2D66 /* ComposeTVCell.xib */,
+				E2C9F48D1BF53BEE00A4BD79 /* LaunchingVC.swift */,
+				E2C9F48F1BF57A3100A4BD79 /* WeekdayMeetingTVCell.swift */,
+				E2C9F4901BF57A3100A4BD79 /* WeekdayMeetingTVCell.xib */,
+				E2C9F4931BF5A2CD00A4BD79 /* HomeCustomView.swift */,
+				E2C9F4951BF5A69700A4BD79 /* HomeCustomView.xib */,
+				E2C9F4971BF5BDDC00A4BD79 /* ReportsHeaderView.swift */,
+				E2C9F4991BF5BDF300A4BD79 /* ReportsHeaderView.xib */,
+				E2C9F49B1BF64EB800A4BD79 /* ReportingTVCell.swift */,
+				E2C9F49C1BF64EB800A4BD79 /* ReportingTVCell.xib */,
 			);
 			path = MeetMarket;
+			sourceTree = "<group>";
+		};
+		E2C9F4831BF3BF4C00A4BD79 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2C9F4751BF3BF4000A4BD79 /* UIViewExtension.swift */,
+				E2C9F4761BF3BF4000A4BD79 /* UIImageExtension.swift */,
+				E2C9F4771BF3BF4000A4BD79 /* UIColorExtension.swift */,
+				E2C9F4781BF3BF4000A4BD79 /* UIAlertViewExtension.swift */,
+				E2C9F4791BF3BF4000A4BD79 /* NSJSONSerializationExtension.swift */,
+				E2C9F47A1BF3BF4000A4BD79 /* NSDictionaryExtension.swift */,
+				E2C9F47B1BF3BF4000A4BD79 /* NSDateExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E2C9F4861BF3E64300A4BD79 /* CircularLoading */ = {
+			isa = PBXGroup;
+			children = (
+				E2C9F4731BF3B70000A4BD79 /* KDCircularProgress.swift */,
+			);
+			name = CircularLoading;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +186,7 @@
 				TargetAttributes = {
 					E237388D1BF15F370002D1FC = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 3TNYZT7AEU;
 					};
 				};
 			};
@@ -122,9 +213,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2C9F49E1BF64EB800A4BD79 /* ReportingTVCell.xib in Resources */,
+				E2C9F4961BF5A69700A4BD79 /* HomeCustomView.xib in Resources */,
+				E2C9F4921BF57A3100A4BD79 /* WeekdayMeetingTVCell.xib in Resources */,
 				E237389C1BF15F370002D1FC /* LaunchScreen.storyboard in Resources */,
+				E2B7625B1BF2C2C7002D2D66 /* ComposeTVCell.xib in Resources */,
 				E23738991BF15F370002D1FC /* Assets.xcassets in Resources */,
 				E23738971BF15F370002D1FC /* Main.storyboard in Resources */,
+				E2C9F49A1BF5BDF300A4BD79 /* ReportsHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +232,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				E23738941BF15F370002D1FC /* ViewController.swift in Sources */,
+				E2C9F47F1BF3BF4000A4BD79 /* UIAlertViewExtension.swift in Sources */,
+				E2C9F4821BF3BF4000A4BD79 /* NSDateExtension.swift in Sources */,
+				E2B762531BF2A651002D2D66 /* ComposeVC.swift in Sources */,
+				E2C9F4881BF3E66A00A4BD79 /* CalculatorVC.swift in Sources */,
+				E2C9F48C1BF5345E00A4BD79 /* SettingsVC.swift in Sources */,
 				E23738921BF15F370002D1FC /* AppDelegate.swift in Sources */,
+				E2B7625A1BF2C2C7002D2D66 /* ComposeTVCell.swift in Sources */,
+				E2C9F47D1BF3BF4000A4BD79 /* UIImageExtension.swift in Sources */,
+				E2C9F4801BF3BF4000A4BD79 /* NSJSONSerializationExtension.swift in Sources */,
+				E2B762511BF2A63D002D2D66 /* ContactsVC.swift in Sources */,
+				E2C9F47E1BF3BF4000A4BD79 /* UIColorExtension.swift in Sources */,
+				E2C9F47C1BF3BF4000A4BD79 /* UIViewExtension.swift in Sources */,
+				E2C9F48E1BF53BEE00A4BD79 /* LaunchingVC.swift in Sources */,
+				E2C9F49D1BF64EB800A4BD79 /* ReportingTVCell.swift in Sources */,
+				E2C9F4911BF57A3100A4BD79 /* WeekdayMeetingTVCell.swift in Sources */,
+				E2C9F4811BF3BF4000A4BD79 /* NSDictionaryExtension.swift in Sources */,
+				E2C9F48A1BF3F98100A4BD79 /* ReportingVC.swift in Sources */,
+				E2C9F4981BF5BDDC00A4BD79 /* ReportsHeaderView.swift in Sources */,
+				E2C9F4941BF5A2CD00A4BD79 /* HomeCustomView.swift in Sources */,
+				E2C9F4741BF3B70000A4BD79 /* KDCircularProgress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,9 +313,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -237,8 +353,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -249,10 +366,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MeetMarket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cable.comcast.meetmarket.MeetMarket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meetmarket.MeetMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos9.1;
+				SWIFT_OBJC_BRIDGING_HEADER = MeetMarket/Header.h;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -260,10 +383,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MeetMarket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cable.comcast.meetmarket.MeetMarket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meetmarket.MeetMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos9.1;
+				SWIFT_OBJC_BRIDGING_HEADER = MeetMarket/Header.h;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -286,6 +415,7 @@
 				E23738A21BF15F370002D1FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

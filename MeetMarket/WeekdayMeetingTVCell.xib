@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weekday" rowHeight="57" id="KGk-i7-Jjw" customClass="WeekdayMeetingTVCell" customModule="MeetMarket" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="373" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="373" height="39"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MON " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGa-Cj-wVJ">
+                        <rect key="frame" x="16" y="9" width="40" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="B6L-Qy-NfM"/>
+                            <constraint firstAttribute="height" constant="21" id="RH2-K2-4Ej"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sJ-Ko-3ev">
+                        <rect key="frame" x="318" y="10" width="40" height="20"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="BFi-KK-0XA"/>
+                            <constraint firstAttribute="height" constant="20" id="vY7-Lh-SAw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TpX-UH-lZp">
+                        <rect key="frame" x="86" y="15" width="227" height="10"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="Lqd-qc-YpE"/>
+                        </constraints>
+                        <color key="trackTintColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                    </progressView>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="6sJ-Ko-3ev" secondAttribute="trailing" constant="7" id="2zg-Sv-vjd"/>
+                    <constraint firstItem="TpX-UH-lZp" firstAttribute="leading" secondItem="uGa-Cj-wVJ" secondAttribute="trailing" constant="5" id="7cd-cu-OCG"/>
+                    <constraint firstItem="6sJ-Ko-3ev" firstAttribute="leading" secondItem="TpX-UH-lZp" secondAttribute="trailing" constant="5" id="ZeC-43-Zva"/>
+                    <constraint firstItem="TpX-UH-lZp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ghY-9o-ibn"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="TpX-UH-lZp" secondAttribute="trailing" constant="10" id="kvQ-eI-CNQ"/>
+                    <constraint firstItem="uGa-Cj-wVJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="mj4-ce-Fsn"/>
+                    <constraint firstItem="TpX-UH-lZp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="pFQ-MR-jCV"/>
+                    <constraint firstItem="uGa-Cj-wVJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="uyG-oo-NTt"/>
+                    <constraint firstItem="6sJ-Ko-3ev" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="x3A-2h-Rbi"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="kvQ-eI-CNQ"/>
+                        <exclude reference="pFQ-MR-jCV"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="progressView" destination="TpX-UH-lZp" id="PMy-vi-YQs"/>
+                <outlet property="weekdayLabel" destination="uGa-Cj-wVJ" id="gb9-xl-qf1"/>
+                <outlet property="weekdayPercentageLabel" destination="6sJ-Ko-3ev" id="VZ4-EH-Xof"/>
+            </connections>
+            <point key="canvasLocation" x="871.5" y="431.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -12,10 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var contacts = ["Manoj Vemula", "Janette Salzar", "Brent Wiesner", "Mike Fine", "Dauren Tatubaev"]
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        UITabBar.appearance().tintColor = UIColor.whiteColor()
+        
         return true
     }
 
