@@ -12,6 +12,9 @@
 		E23738971BF15F370002D1FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23738951BF15F370002D1FC /* Main.storyboard */; };
 		E23738991BF15F370002D1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E23738981BF15F370002D1FC /* Assets.xcassets */; };
 		E237389C1BF15F370002D1FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E237389A1BF15F370002D1FC /* LaunchScreen.storyboard */; };
+		E26D98981C165EF300424D2E /* SalaryInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D98971C165EF300424D2E /* SalaryInfoVC.swift */; };
+		E28554111C0FCB01002B5F6B /* SelectMeetingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28554101C0FCB01002B5F6B /* SelectMeetingVC.swift */; };
+		E28554131C0FD5B5002B5F6B /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28554121C0FD5B5002B5F6B /* ArrayExtension.swift */; };
 		E2B762511BF2A63D002D2D66 /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B762501BF2A63D002D2D66 /* ContactsVC.swift */; };
 		E2B762531BF2A651002D2D66 /* ComposeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B762521BF2A651002D2D66 /* ComposeVC.swift */; };
 		E2B7625A1BF2C2C7002D2D66 /* ComposeTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B762581BF2C2C7002D2D66 /* ComposeTVCell.swift */; };
@@ -47,6 +50,9 @@
 		E237389B1BF15F370002D1FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E237389D1BF15F370002D1FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E23738A51BF163490002D1FC /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		E26D98971C165EF300424D2E /* SalaryInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalaryInfoVC.swift; sourceTree = "<group>"; };
+		E28554101C0FCB01002B5F6B /* SelectMeetingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMeetingVC.swift; sourceTree = "<group>"; };
+		E28554121C0FD5B5002B5F6B /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		E2B762501BF2A63D002D2D66 /* ContactsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
 		E2B762521BF2A651002D2D66 /* ComposeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeVC.swift; sourceTree = "<group>"; };
 		E2B762581BF2C2C7002D2D66 /* ComposeTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTVCell.swift; sourceTree = "<group>"; };
@@ -109,7 +115,9 @@
 				E2B762501BF2A63D002D2D66 /* ContactsVC.swift */,
 				E2B762521BF2A651002D2D66 /* ComposeVC.swift */,
 				E2C9F4871BF3E66A00A4BD79 /* CalculatorVC.swift */,
+				E26D98971C165EF300424D2E /* SalaryInfoVC.swift */,
 				E23738931BF15F370002D1FC /* ViewController.swift */,
+				E28554101C0FCB01002B5F6B /* SelectMeetingVC.swift */,
 				E2C9F4891BF3F98100A4BD79 /* ReportingVC.swift */,
 				E2C9F48B1BF5345E00A4BD79 /* SettingsVC.swift */,
 				E23738951BF15F370002D1FC /* Main.storyboard */,
@@ -135,6 +143,7 @@
 		E2C9F4831BF3BF4C00A4BD79 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E28554121C0FD5B5002B5F6B /* ArrayExtension.swift */,
 				E2C9F4751BF3BF4000A4BD79 /* UIViewExtension.swift */,
 				E2C9F4761BF3BF4000A4BD79 /* UIImageExtension.swift */,
 				E2C9F4771BF3BF4000A4BD79 /* UIColorExtension.swift */,
@@ -231,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E28554111C0FCB01002B5F6B /* SelectMeetingVC.swift in Sources */,
 				E23738941BF15F370002D1FC /* ViewController.swift in Sources */,
 				E2C9F47F1BF3BF4000A4BD79 /* UIAlertViewExtension.swift in Sources */,
 				E2C9F4821BF3BF4000A4BD79 /* NSDateExtension.swift in Sources */,
@@ -240,6 +250,7 @@
 				E23738921BF15F370002D1FC /* AppDelegate.swift in Sources */,
 				E2B7625A1BF2C2C7002D2D66 /* ComposeTVCell.swift in Sources */,
 				E2C9F47D1BF3BF4000A4BD79 /* UIImageExtension.swift in Sources */,
+				E28554131C0FD5B5002B5F6B /* ArrayExtension.swift in Sources */,
 				E2C9F4801BF3BF4000A4BD79 /* NSJSONSerializationExtension.swift in Sources */,
 				E2B762511BF2A63D002D2D66 /* ContactsVC.swift in Sources */,
 				E2C9F47E1BF3BF4000A4BD79 /* UIColorExtension.swift in Sources */,
@@ -251,6 +262,7 @@
 				E2C9F48A1BF3F98100A4BD79 /* ReportingVC.swift in Sources */,
 				E2C9F4981BF5BDDC00A4BD79 /* ReportsHeaderView.swift in Sources */,
 				E2C9F4941BF5A2CD00A4BD79 /* HomeCustomView.swift in Sources */,
+				E26D98981C165EF300424D2E /* SalaryInfoVC.swift in Sources */,
 				E2C9F4741BF3B70000A4BD79 /* KDCircularProgress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +328,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "54afe777-8556-40e4-8c2b-d09a79c2375b";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -355,7 +367,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "54afe777-8556-40e4-8c2b-d09a79c2375b";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -372,10 +384,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meetmarket.MeetMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "54afe777-8556-40e4-8c2b-d09a79c2375b";
 				SDKROOT = iphoneos9.1;
 				SWIFT_OBJC_BRIDGING_HEADER = MeetMarket/Header.h;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -389,10 +401,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meetmarket.MeetMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "54afe777-8556-40e4-8c2b-d09a79c2375b";
 				SDKROOT = iphoneos9.1;
 				SWIFT_OBJC_BRIDGING_HEADER = MeetMarket/Header.h;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

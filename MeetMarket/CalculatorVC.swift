@@ -8,21 +8,27 @@
 
 import UIKit
 
-class CalculatorVC: UIViewController {
+class CalculatorVC: UIViewController, SelectedDelegate {
     
     @IBOutlet var progress: KDCircularProgress!
     @IBOutlet var loadMeetinButton: UIButton!
+    @IBOutlet var pausePlayImageView: UIImageView!
     @IBOutlet var startStopButton: UIButton!
     @IBOutlet var timeElapsedLabel: UILabel!
     @IBOutlet var meetingCostLabel: UILabel!
     @IBOutlet var employeeHours: UILabel!
     @IBOutlet var numberOfAttendees: UITextField!
     @IBOutlet var avergeCostPerHour: UITextField!
+    @IBOutlet var resumeButton: UIButton!
+    @IBOutlet var resetButton: UIButton!
+    @IBOutlet var shareButton: UIButton!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var infoButton: UIButton!
     
     var timer = NSTimer()
     var startTime = NSTimeInterval()
     
-    var meetingArray = ["9:30-11:00  Dev Meeting","11:30-1:30  SEEiT Production Meeting", "1:00-2:30  Labweek Demos", "2:30-3:30 Dev Meeting", "3:30-4:00 SEEiT Production Meeting","4:00-5:00  Sprint Planning","Stop & Chat", "Custom Meeting"]
+    var meetingArray = ["New Meeting","Stop & Chat", "Daily Standup", "Product Meeting", "Demos", "Developer Meeting", "Design Meeting","Sprint Planning"]
     
     func getNumberOfPeopleForMeeting(meeting: String) -> Int {
         switch (meeting) {
@@ -30,7 +36,7 @@ class CalculatorVC: UIViewController {
             return 2
         case "select Meeting":
             return currentNumberOfAttendees
-        case "Custom Meeting":
+        case "New Meeting":
             self.numberOfAttendees.becomeFirstResponder()
             return 1
         case "1:00-2:30  Labweek Demos":
@@ -42,33 +48,62 @@ class CalculatorVC: UIViewController {
     
     var currentMeeting = "select Meeting"
     
-    var currentNumberOfAttendees : Int = 0
+    var currentNumberOfAttendees : Int = 2
     var dollarAmount : Int = 54
     
-    @IBAction func selectMeetng() {
-        if self.meetingCostLabel.text! != "Start" && self.timer.valid {
-            self.startStopMeeting()
-            self.meetingCostLabel.text = "Start"
-            //self.startStopButton.setTitle("Start", forState: UIControlState.Normal)
+    func selectedNewMeeting(meeting: String) {
+        self.loadMeetinButton.setTitle(meeting, forState: UIControlState.Normal)
+        self.resetMeeting()
+        self.currentMeeting = meeting
+        self.currentNumberOfAttendees = 2
+        self.dollarAmount = 54
+        if let meetingInfo = NSUserDefaults.standardUserDefaults().objectForKey(meeting) as? NSDictionary {
+            if let attendees = meetingInfo["attendees"] as? Int {
+                self.currentNumberOfAttendees = attendees
+            }
+            if let hourlyRate = meetingInfo["hourlyRate"] as? Int {
+                self.dollarAmount = hourlyRate
+            }
+        } else {
+            self.numberOfAttendees.becomeFirstResponder()
         }
-        let meetingSelector = UIAlertController(title: "select your meeting", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-        
-        for each in meetingArray {
-            let action = UIAlertAction(title: each, style: UIAlertActionStyle.Default, handler: { action in
-                self.selectedMeeting(each)
-                self.currentNumberOfAttendees = self.getNumberOfPeopleForMeeting(each)
-                self.numberOfAttendees.text = "\(self.currentNumberOfAttendees)"
-                self.timeElapsedLabel.text = "00:00:00"
-                self.employeeHours.text = "0:00"
-                self.meetingCostLabel.text = "Start"
-                //self.startStopButton.setTitle("Start", forState: UIControlState.Normal)
-            })
-            meetingSelector.addAction(action)
+        self.numberOfAttendees.text = "\(self.currentNumberOfAttendees)"
+        self.avergeCostPerHour.text = "$\(self.dollarAmount)"
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? SelectMeetingVC {
+            vc.delegate = self
         }
         
-        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
-        meetingSelector.addAction(cancel)
-        self.presentViewController(meetingSelector, animated: true, completion: nil)
+        if let nc = segue.destinationViewController as? UINavigationController {
+            if let vc = nc.topViewController as? SalaryInfoVC {
+                self.dismissKeyboard()
+                vc.currentDollar = self.dollarAmount
+            }
+            
+        }
+    }
+    
+    func setToDefaultValues() {
+        self.timeElapsedLabel.text = "00:00:00"
+        self.employeeHours.text = "0:00"
+        self.meetingCostLabel.text = "Start"
+        self.hideExtraButtons(true)
+    }
+    
+    func hideExtraButtons(hide: Bool) {
+        self.resetButton.userInteractionEnabled = !hide
+        self.shareButton.enabled = !hide
+        if hide {
+            self.resetButton.alpha = 0.25
+            self.shareButton.alpha = 0.25
+        } else {
+            self.resetButton.alpha = 1.0
+            self.shareButton.alpha = 1.0
+        }
+        //self.resumeButton.hidden = hide
+        
     }
     
     func selectedMeeting(meeting: String) {
@@ -78,11 +113,19 @@ class CalculatorVC: UIViewController {
     
     func updateTime() {
         
-        var currentTime = NSDate.timeIntervalSinceReferenceDate()
+        let currentTime = NSDate.timeIntervalSinceReferenceDate()
         
         //Find the difference between current time and start time.
         
-        var elapsedTime: NSTimeInterval = currentTime - startTime
+        var elapsedTime: NSTimeInterval
+        var finalTime : NSTimeInterval
+        if let exists = self.resumeTime {
+            finalTime = (currentTime -  startTime) + exists
+            elapsedTime = (currentTime -  startTime) + exists
+        } else {
+            finalTime = (currentTime -  startTime)
+            elapsedTime = (currentTime -  startTime)
+        }
         
         //calculate the hours in elapsed time.
         
@@ -104,50 +147,104 @@ class CalculatorVC: UIViewController {
         
         //find out the fraction of milliseconds to be displayed.
         
-        let fraction = UInt8(elapsedTime * 100)
+        //let fraction = UInt8(elapsedTime * 100)
         
         //add the leading zero for minutes, seconds and millseconds and store them as string constants
         
         let strHours = String(format: "%02d", hours)
         let strMinutes = String(format: "%02d", minutes)
         let strSeconds = String(format: "%02d", seconds)
-        let strFraction = String(format: "%d", fraction)
+        //let strFraction = String(format: "%d", fraction)
         
         //concatenate minuets, seconds and milliseconds as assign it to the UILabel
         
-        var temp = Double(self.currentNumberOfAttendees)
+        let temp = Double(self.currentNumberOfAttendees)
         self.timeElapsedLabel.text = "\(strHours):\(strMinutes):\(strSeconds)"
-        var cost = String(format: "%.2f", (Double(self.currentNumberOfAttendees)*(currentTime -  startTime)*Double(self.dollarAmount))/3600)
-        let emplopyeehours = String(format: "%.2f", (temp*(currentTime - startTime))/3600)
-        cost = self.currentNumberOfAttendees == 0 ? "0" : cost
-        self.meetingCostLabel.text = "$\(cost)"
-        //self.startStopButton.setTitle("$\(cost)", forState: UIControlState.Normal)
-        self.employeeHours.text = "\(emplopyeehours)"
+        var cost = String(format: "%.2f", (Double(self.currentNumberOfAttendees)*(finalTime)*Double(self.dollarAmount))/3600)
         
+        let emplopyeehours = String(format: "%.2f", (temp*(finalTime))/3600)
+        cost = self.currentNumberOfAttendees == 0 ? "0" : cost
+        
+        self.meetingCostLabel.text = "$\(cost)"
+        self.employeeHours.text = "\(emplopyeehours)"
     }
     
+    var resumeTime : NSTimeInterval?
     
     var shouldStopAnimating = true
     
+    var elapsedTime: NSTimeInterval!
+    
+    @IBAction func resumeMeeting() {
+        shouldStopAnimating = false
+        self.meetingCostLabel.backgroundColor = UIColor.clearColor()
+        self.meetingCostLabel.textColor = UIColor.myredColor
+        self.setProgressToValue(100)
+        let aSelector : Selector = "updateTime"
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+        startTime = NSDate.timeIntervalSinceReferenceDate()
+        self.hideExtraButtons(true)
+    }
+    
+    @IBAction func resetMeeting() {
+        self.resumeTime = nil
+        self.setToDefaultValues()
+    }
+    
+    @IBAction func shareMeeting() {
+        UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, self.view.opaque, 0.0)
+        self.view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        self.showExportOptionWith(image)
+        /*
+        let imageData = UIImageJPEGRepresentation(image, 1.0) //you can use PNG too
+        imageData?.writeToFile("image1.jpeg", atomically: true)*/
+    }
+    
+    func showExportOptionWith(image: UIImage) {
+        let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        
+        activityVC.title = "Share Your Meeting Cost"
+        //New Excluded Activities Code
+        let activitiesArray = [UIActivityTypePrint, UIActivityTypeCopyToPasteboard, UIActivityTypeAssignToContact, UIActivityTypeAddToReadingList]
+        
+        activityVC.excludedActivityTypes = activitiesArray
+        if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad
+        {
+            let pop = UIPopoverController(contentViewController: activityVC)
+            pop.presentPopoverFromRect(self.shareButton.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+        } else {
+            self.presentViewController(activityVC, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func startStopMeeting() {
         if self.currentNumberOfAttendees > 0 {
-            self.numberOfAttendees.resignFirstResponder()
-            self.avergeCostPerHour.resignFirstResponder()
             if timer.valid {
-                //self.startStopButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-                //self.startStopButton.backgroundColor = UIColor.myredColor
                 self.meetingCostLabel.backgroundColor = UIColor.myredColor
                 self.meetingCostLabel.textColor = UIColor.whiteColor()
                 timer.invalidate()
                 self.shouldStopAnimating = true
                 self.setProgressToValue(0)
+                self.hideExtraButtons(false)
+                let currentTime = NSDate.timeIntervalSinceReferenceDate()
+                if let exists = self.resumeTime {
+                    self.resumeTime = (currentTime -  startTime) + exists
+                } else {
+                    self.resumeTime = (currentTime -  startTime)
+                }
+                self.pausePlayImageView.image = UIImage(named: "playpause")?.tintWithColor(UIColor.whiteColor())
             } else {
+                self.numberOfAttendees.resignFirstResponder()
+                self.avergeCostPerHour.resignFirstResponder()
                 if !timer.valid {
+                    self.pausePlayImageView.image = UIImage(named: "playpause")?.tintWithColor(UIColor.myredColor)
+                    self.hideExtraButtons(true)
                     shouldStopAnimating = false
                     self.meetingCostLabel.backgroundColor = UIColor.clearColor()
                     self.meetingCostLabel.textColor = UIColor.myredColor
-                    //self.startStopButton.setTitleColor(UIColor.clearColor(), forState: UIControlState.Highlighted)
-                    //self.startStopButton.backgroundColor = UIColor.clearColor()
                     self.setProgressToValue(100)
                     let aSelector : Selector = "updateTime"
                     timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector,     userInfo: nil, repeats: true)
@@ -155,6 +252,17 @@ class CalculatorVC: UIViewController {
                 }
             }
         }
+    }
+    
+    func addDoneButtonFor(textField: UITextField) {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace,
+            target: nil, action: nil)
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .Done,
+            target: view, action: Selector("endEditing:"))
+        keyboardToolbar.items = [flexBarButton, doneBarButton]
+        textField.inputAccessoryView = keyboardToolbar
     }
 
     override func viewDidLoad() {
@@ -168,9 +276,12 @@ class CalculatorVC: UIViewController {
         imageView.image = image
         self.navigationItem.titleView = imageView
         
+        self.navigationController?.navigationBar.backgroundColor = UIColor.whiteColor()
+        
+        self.loadMeetinButton.setTitleColor(UIColor.myblueColor, forState: UIControlState.Normal)
         
         self.loadMeetinButton.layer.cornerRadius = 15
-        self.loadMeetinButton.layer.borderColor = UIColor.blackColor().CGColor
+        self.loadMeetinButton.layer.borderColor = UIColor.lightGrayColor().CGColor
         self.loadMeetinButton.layer.borderWidth = 1.0
         
         progress.startAngle = -90
@@ -192,12 +303,38 @@ class CalculatorVC: UIViewController {
         self.avergeCostPerHour.textColor = UIColor.myblueColor
         
 
-        //self.startStopButton.backgroundColor = UIColor.myredColor
         self.meetingCostLabel.backgroundColor = UIColor.myredColor
         self.startStopButton.layer.cornerRadius = 75.0
         self.meetingCostLabel.layer.cornerRadius = 75.0
         self.meetingCostLabel.layer.masksToBounds = true
         self.meetingCostLabel.textColor = UIColor.whiteColor()
+        
+        self.resetButton.backgroundColor = UIColor.myredColor
+        self.resetButton.layer.cornerRadius = 15.0
+        self.shareButton.backgroundColor = UIColor.myblueColor
+        self.shareButton.layer.cornerRadius = 15.0
+        self.hideExtraButtons(true)
+        
+        self.pausePlayImageView.image = UIImage(named: "playpause")?.tintWithColor(UIColor.whiteColor())
+        
+        self.updateDate()
+        NSTimer.scheduledTimerWithTimeInterval(1000, target: self, selector: "updateDate", userInfo: nil, repeats: true)
+        
+        self.addDoneButtonFor(self.numberOfAttendees)
+        self.addDoneButtonFor(self.avergeCostPerHour)
+        
+        let tap = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        self.view.addGestureRecognizer(tap)
+        self.infoButton.setImage(UIImage(named: "info_icon")?.tintWithColor(UIColor.myblueColor), forState: UIControlState.Normal)
+    }
+    
+    func dismissKeyboard() {
+        self.numberOfAttendees.resignFirstResponder()
+        self.avergeCostPerHour.resignFirstResponder()
+    }
+    
+    func updateDate() {
+        self.dateLabel.text = "Today's Date: " + NSDate.stringFromDate(NSDate(), format:  "EEEE, MMM d, YYYY")
     }
     
     func setProgressToValue(value: Int) {
@@ -226,32 +363,37 @@ class CalculatorVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
-//self.searchTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
-
 extension CalculatorVC {
     func textFieldDidBeginEditing(textField: UITextField) {
-        self.avergeCostPerHour.text = self.avergeCostPerHour.text!.stringByReplacingOccurrencesOfString("$", withString: "")
+        if textField == self.avergeCostPerHour {
+            self.avergeCostPerHour.text = self.avergeCostPerHour.text!.stringByReplacingOccurrencesOfString("$", withString: "")
+        }
+        if self.timer.valid {
+            self.startStopMeeting()
+        }
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
         if textField == self.numberOfAttendees {
-            self.currentNumberOfAttendees = Int(textField.text!)!
+            self.currentNumberOfAttendees = 2
+            if let typed = textField.text {
+                if let valid = Int(typed) {
+                    self.currentNumberOfAttendees = valid == 0 ? 2 : valid
+                    NSUserDefaults.standardUserDefaults().setObject(["attendees":self.currentNumberOfAttendees,"hourlyRate": self.dollarAmount], forKey: self.currentMeeting)
+                }
+            }
+            self.numberOfAttendees.text = "\(self.currentNumberOfAttendees)"
         } else {
-            self.dollarAmount = Int(textField.text!)!
+            self.dollarAmount = 54
+            if let typed = textField.text {
+                if let valid = Int(typed) {
+                    self.dollarAmount = valid == 0 ? 54 : valid
+                    NSUserDefaults.standardUserDefaults().setObject(["attendees":self.currentNumberOfAttendees,"hourlyRate": self.dollarAmount], forKey: self.currentMeeting)
+                }
+            }
             self.avergeCostPerHour.text = "$\(self.dollarAmount)"
         }
     }

@@ -20,6 +20,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         UITabBar.appearance().tintColor = UIColor.whiteColor()
+        UITableViewCell.appearance().tintColor = UIColor.myblueColor
+        UINavigationBar.appearance().tintColor = UIColor.myblueColor
+        
+        if let _ = NSUserDefaults.standardUserDefaults().objectForKey("addedMeetings") {
+            //self.performSegueWithIdentifier("showIntro", sender: nil)
+        } else {
+            // Delete values from keychain here
+            NSUserDefaults.standardUserDefaults().setValue(["Daily Standup / Scrum","Weekly Status Meeting","All Hands / Office Meeting","One-on-One","Stop and chat","How was your weekend chat","Did you see the game last night chat"] , forKey: "Meetings")
+            NSUserDefaults.standardUserDefaults().setObject(["attendees":7,"hourlyRate": 54], forKey: "Daily Standup / Scrum")
+            NSUserDefaults.standardUserDefaults().setObject(["attendees":10,"hourlyRate": 54], forKey: "Weekly Status Meeting")
+            NSUserDefaults.standardUserDefaults().setObject(["attendees":50,"hourlyRate": 54], forKey: "All Hands / Office Meeting")
+            NSUserDefaults.standardUserDefaults().setObject(["attendees":2,"hourlyRate": 54], forKey: "One-on-One")
+            NSUserDefaults.standardUserDefaults().setObject(["attendees":2,"hourlyRate": 54], forKey: "Stop and chat")
+            NSUserDefaults.standardUserDefaults().setObject(["attendees":2,"hourlyRate": 54], forKey: "How was your weekend chat")
+            NSUserDefaults.standardUserDefaults().setObject(["attendees":4,"hourlyRate": 54], forKey: "Did you see the game last night chat")
+            NSUserDefaults.standardUserDefaults().setValue(true , forKey: "addedMeetings")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
         
         return true
     }
