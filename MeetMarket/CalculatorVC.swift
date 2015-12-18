@@ -272,7 +272,7 @@ class CalculatorVC: UIViewController, SelectedDelegate {
         
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 40))
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
-        let image = UIImage(named: "name")
+        let image = UIImage(named: "HeaderLogo")
         imageView.image = image
         self.navigationItem.titleView = imageView
         
@@ -297,7 +297,7 @@ class CalculatorVC: UIViewController, SelectedDelegate {
         
         progress.trackColor = UIColor.colorWithHexString("#e2e2e2", andAlpha: 1.0)
         
-        self.timeElapsedLabel.textColor = UIColor.mygreenColor
+        self.timeElapsedLabel.textColor = UIColor.myyellowColor
         self.employeeHours.textColor = UIColor.myyellowColor
         self.numberOfAttendees.textColor = UIColor.myblueColor
         self.avergeCostPerHour.textColor = UIColor.myblueColor
@@ -309,7 +309,7 @@ class CalculatorVC: UIViewController, SelectedDelegate {
         self.meetingCostLabel.layer.masksToBounds = true
         self.meetingCostLabel.textColor = UIColor.whiteColor()
         
-        self.resetButton.backgroundColor = UIColor.myredColor
+        self.resetButton.backgroundColor = UIColor.mygreenColor
         self.resetButton.layer.cornerRadius = 15.0
         self.shareButton.backgroundColor = UIColor.myblueColor
         self.shareButton.layer.cornerRadius = 15.0

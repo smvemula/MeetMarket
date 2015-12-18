@@ -39,6 +39,7 @@
 		E2C9F49A1BF5BDF300A4BD79 /* ReportsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2C9F4991BF5BDF300A4BD79 /* ReportsHeaderView.xib */; };
 		E2C9F49D1BF64EB800A4BD79 /* ReportingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F49B1BF64EB800A4BD79 /* ReportingTVCell.swift */; };
 		E2C9F49E1BF64EB800A4BD79 /* ReportingTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2C9F49C1BF64EB800A4BD79 /* ReportingTVCell.xib */; };
+		E2E4ADAB1C247C5600B562C3 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4ADAA1C247C5600B562C3 /* AboutVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		E2C9F4991BF5BDF300A4BD79 /* ReportsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportsHeaderView.xib; sourceTree = "<group>"; };
 		E2C9F49B1BF64EB800A4BD79 /* ReportingTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportingTVCell.swift; sourceTree = "<group>"; };
 		E2C9F49C1BF64EB800A4BD79 /* ReportingTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportingTVCell.xib; sourceTree = "<group>"; };
+		E2E4ADAA1C247C5600B562C3 /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				E2B762501BF2A63D002D2D66 /* ContactsVC.swift */,
 				E2B762521BF2A651002D2D66 /* ComposeVC.swift */,
 				E2C9F4871BF3E66A00A4BD79 /* CalculatorVC.swift */,
+				E2E4ADAA1C247C5600B562C3 /* AboutVC.swift */,
 				E26D98971C165EF300424D2E /* SalaryInfoVC.swift */,
 				E23738931BF15F370002D1FC /* ViewController.swift */,
 				E28554101C0FCB01002B5F6B /* SelectMeetingVC.swift */,
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E28554111C0FCB01002B5F6B /* SelectMeetingVC.swift in Sources */,
+				E2E4ADAB1C247C5600B562C3 /* AboutVC.swift in Sources */,
 				E23738941BF15F370002D1FC /* ViewController.swift in Sources */,
 				E2C9F47F1BF3BF4000A4BD79 /* UIAlertViewExtension.swift in Sources */,
 				E2C9F4821BF3BF4000A4BD79 /* NSDateExtension.swift in Sources */,
