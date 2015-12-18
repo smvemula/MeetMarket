@@ -382,9 +382,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MeetMarket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.meetmarket.MeetMarket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meetmarket.FullMeetMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "54afe777-8556-40e4-8c2b-d09a79c2375b";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos9.1;
 				SWIFT_OBJC_BRIDGING_HEADER = MeetMarket/Header.h;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -399,9 +399,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MeetMarket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.meetmarket.MeetMarket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meetmarket.FullMeetMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "54afe777-8556-40e4-8c2b-d09a79c2375b";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos9.1;
 				SWIFT_OBJC_BRIDGING_HEADER = MeetMarket/Header.h;
 				TARGETED_DEVICE_FAMILY = 1;

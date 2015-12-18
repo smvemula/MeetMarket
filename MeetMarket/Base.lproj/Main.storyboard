@@ -195,11 +195,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="To3-FK-Khd">
-                                <rect key="frame" x="20" y="0.0" width="560" height="536"/>
+                                <rect key="frame" x="20" y="0.0" width="560" height="487"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -368,11 +368,11 @@
                         <viewControllerLayoutGuide type="bottom" id="WAA-Am-O56"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="knW-XR-E5u">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iFR-xv-IZ8">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -421,7 +421,7 @@
                         <viewControllerLayoutGuide type="bottom" id="YWr-tf-uEa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="A6B-jY-TcA">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Brent" translatesAutoresizingMaskIntoConstraints="NO" id="BjD-a1-Szj">
@@ -1089,7 +1089,10 @@
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="iaJ-WN-iAX" kind="relationship" relationship="viewControllers" id="oPw-kb-DOT"/>
                         <segue destination="h5r-9n-Gul" kind="relationship" relationship="viewControllers" id="9WJ-pj-zxB"/>
+                        <segue destination="FPH-EK-iHl" kind="relationship" relationship="viewControllers" id="rHn-6t-SPL"/>
+                        <segue destination="c09-rY-Mle" kind="relationship" relationship="viewControllers" id="caf-XT-kF6"/>
                         <segue destination="ZFQ-mY-Kzp" kind="relationship" relationship="viewControllers" id="v6y-Ay-bSE"/>
                     </connections>
                 </tabBarController>
